@@ -8,8 +8,6 @@ import { z } from "zod";
 import { loginSchema } from "@/schemas";
 import { Button } from "@/components/ui/button";
 import { useTransition } from "react";
-import { login } from "@/actions/login";
-import { FormInput } from "@/components/auth/form-input";
 import { toast } from "sonner";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -27,18 +25,9 @@ export const LoginForm = () => {
   });
 
   const handleSubmit = form.handleSubmit((values) => {
-    startTransition(() => {
-      login(values)
-        .then((data) => {
-          if (!data) return;
-          if (!data.success) {
-            return toast.error(data.error.message);
-          }
-          return router.push("/");
-        })
-        .catch(() => toast.error("Something went wrong."));
-    });
-  });
+    toast.error("Something went wrong.");
+  
+  };
 
   return (
     <CardWrapper
@@ -52,17 +41,7 @@ export const LoginForm = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
             
-            <div>
-              
-              <Button
-                size="sm"
-                variant="link"
-                className="-mt-6 p-0 text-xs text-blue-500 w-full justify-end"
-                asChild
-              >
-                <Link href="/reset">Forgot password?</Link>
-              </Button>
-            </div>
+            
           </div>
           <Button type="submit" disabled={isPending} className="w-full">
             Login
