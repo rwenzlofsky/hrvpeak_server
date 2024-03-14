@@ -48,7 +48,7 @@ export const WhoopProvider = Auth0Provider({
     client: {
         token_endpoint_auth_method: "client_secret_post",
     },
-    issuer: "https://api.prod.whoop.com/oauth/oauth2"
+    issuer: "https://api.prod.whoop.com/oauth/oauth2",
     token: process.env.WHOOP_TOKEN_URL,
     authorization: {
       url: process.env.WHOOP_AUTH_URL,
