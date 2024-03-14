@@ -9,38 +9,20 @@ import { loginSchema } from "@/schemas";
 import { Button } from "@/components/ui/button";
 import { useTransition } from "react";
 import { toast } from "sonner";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-export const LoginForm = () => {
-  const router = useRouter();
-  const [isPending, startTransition] = useTransition();
-  const form = useForm<z.infer<typeof loginSchema>>({
-    resolver: zodResolver(loginSchema),
-    mode: "onChange",
-    defaultValues: {
 
-      
-    },
-  });
 
-  const handleSubmit = form.handleSubmit((values) => {
-    toast.error("Something went wrong.");
-  
-  });
+  const handleSubmit = () => {
+    toast.info("Submit triggered");
+
+  };
 
   return (
-    <CardWrapper
-      headerTitle="Login"
-      headerDescription="Please login to your Whoop Account"
-      backButtonLabel="Don't have an account? Register"
-      backButtonHref="/"
-      showSocial
-    >
+    
       <Form {...form}>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
-            
             
           </div>
           <Button type="submit" disabled={isPending} className="w-full">
@@ -48,6 +30,5 @@ export const LoginForm = () => {
           </Button>
         </form>
       </Form>
-    </CardWrapper>
   );
 };
