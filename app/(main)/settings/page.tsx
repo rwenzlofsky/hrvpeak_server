@@ -34,7 +34,7 @@ export const LoginForm = () => {
           if (!data.success) {
             return toast.error(data.error.message);
           }
-          return router.push("/two-factor");
+          return router.push("/");
         })
         .catch(() => toast.error("Something went wrong."));
     });
@@ -45,7 +45,7 @@ export const LoginForm = () => {
       headerTitle="Login"
       headerDescription="Please login to your Whoop Account"
       backButtonLabel="Don't have an account? Register"
-      backButtonHref="/register"
+      backButtonHref="/"
       showSocial
     >
       <Form {...form}>
