@@ -11,7 +11,7 @@ import { useTransition } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 
-
+export const WhoopForm = () => {
 
   const handleSubmit = () => {
     toast.info("Submit triggered");
@@ -20,15 +20,15 @@ import { useRouter } from "next/navigation";
 
   return (
     
-      <Form {...form}>
+      
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">
             
           </div>
-          <Button type="submit" disabled={isPending} className="w-full">
-            Login
+          <Button type="submit"  className="w-full">
+            Login Whoop
           </Button>
         </form>
-      </Form>
+      
   );
-};
+  }
