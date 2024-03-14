@@ -27,7 +27,7 @@ export const LoginForm = () => {
   const handleSubmit = form.handleSubmit((values) => {
     toast.error("Something went wrong.");
   
-  };
+  });
 
   return (
     <CardWrapper
