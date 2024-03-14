@@ -74,7 +74,7 @@ export const LoginForm = () => {
                 className="-mt-6 p-0 text-xs text-blue-500 w-full justify-end"
                 asChild
               >
-                <Link href="/reset">Forgot password?</Link>
+                <Link href="/reset"><a>Forgot password?</a></Link>
               </Button>
             </div>
           </div>
